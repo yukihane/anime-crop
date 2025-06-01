@@ -61,19 +61,12 @@ class Image2form():
             print("resize_facter=",resize_facter) #HeadからResizeのファクタを計算
         except:
             result = "resize error" #resize_facteの計算が正しく行えなかった場合は1=なにもしない。
+            print(result)
             return result
-            
-        if resize_facter > 4:   #2倍以上の拡大は推奨できないのでエラー
+
+        if resize_facter > 1: #2倍して所定のサイズに縮小する
             print("image is too small")
             result="image is too small"
-        elif resize_facter > 2: #4倍して所定のサイズに縮小する
-            
-            input_image = self.UP.upscale(input_image, 4) #upscale
-            
-            image_resaize=resize_facter/4
-        elif resize_facter > 1: #2倍して所定のサイズに縮小する
-            input_image = self.UP.upscale(input_image, 2) #upscale
-            image_resaize=resize_facter/2
         else: # 1> reasize >0 なのでそのまま縮小率として使う
             image_resaize=resize_facter
             
@@ -110,4 +103,3 @@ class Image2form():
         
 
     
-
