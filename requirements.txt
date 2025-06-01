@@ -71,7 +71,7 @@ packaging==24.1
 pandas==2.2.2
 pillow==10.2.0
 platformdirs==4.2.2
-protobuf==4.25.3
+# protobuf==4.25.3
 pydantic==2.7.4
 pydantic_core==2.18.4
 pydub==0.25.1
